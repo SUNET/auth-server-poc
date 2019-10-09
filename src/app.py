@@ -12,6 +12,7 @@ app.config['JWT_PRIVATE_KEY'] = open(PEM_FILE).read()
 app.config['JWT_PUBLIC_KEY'] = open(PEM_FILE).read()
 app.config['JWT_ALGORITHM'] = 'ES256'
 app.config['JWT_IDENTITY_CLAIM'] = 'sub'
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False
 
 
 class AuthApi(Resource):
