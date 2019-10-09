@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource
-from flask_jwt_extended import create_access_token
+from flask_jwt_extended import create_access_token, JWTManager
 
 app = Flask(__name__)
 api = Api(app, prefix='/api/v1.0')
+jwt = JWTManager(app)
 
 PEM_FILE = '/opt/auth-server-poc/cert/ec256-key-pair.pem'
 
