@@ -4,11 +4,11 @@ FROM debian:buster
 RUN mkdir -p /opt/auth-server-poc
 
 # Setup script
-COPY cnaas-setup.sh /opt/auth-server-poc/cnaas-setup.sh
+COPY setup.sh /opt/auth-server-poc/setup.sh
 RUN /opt/auth-server-poc/setup.sh
 
 # Prepare for supervisord, uwsgi, ngninx
-COPY config/uwsgi.ini /opt/auth-server-poc/venv/cnaas-nms/
+COPY config/uwsgi.ini /opt/auth-server-poc/venv/auth-server-poc/
 COPY config/.htpasswd /opt/auth-server-poc/.htpasswd
 COPY config/supervisord_app.conf /etc/supervisor/supervisord.conf
 COPY config/nginx_app.conf /etc/nginx/sites-available/
