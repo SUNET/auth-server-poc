@@ -2,6 +2,7 @@ FROM debian:buster
 
 # Create directories
 RUN mkdir -p /opt/auth-server-poc
+RUN mkdir -p /opt/auth-server-poc/cert
 
 # Setup script
 COPY setup.sh /opt/auth-server-poc/setup.sh
@@ -14,6 +15,7 @@ COPY config/supervisord_app.conf /etc/supervisor/supervisord.conf
 COPY config/nginx_app.conf /etc/nginx/sites-available/
 COPY config/nginx.conf /etc/nginx/
 COPY cert/* /etc/nginx/conf.d/
+COPY cert/ec256-key-pair.pem /opt/auth-server-poc/cert/
 
 # Give nginx some special treatment
 RUN unlink /etc/nginx/sites-enabled/default
