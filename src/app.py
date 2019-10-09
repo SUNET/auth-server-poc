@@ -1,8 +1,9 @@
-from flask import Flask
+from flask import Flask, request
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "<span style='color:red'>Remote user: {}</span>".format(os.environ['REMOTE_USER'])
+    return "<p>Environ: {}</p><p>Auth header: {}</p>".format(os.environ['REMOTE_USER'],
+                                                             request.headers.get('Authorization'))
