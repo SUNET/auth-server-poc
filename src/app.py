@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from flask_restful import Api, Resource
 from flask_jwt_extended import create_access_token, JWTManager
 
@@ -17,7 +17,7 @@ app.config['JWT_IDENTITY_CLAIM'] = 'sub'
 class AuthApi(Resource):
     def post(self):
         access_token = create_access_token(identity=request.environ.get('REMOTE_USER'))
-        return jsonify(access_token=access_token), 200
+        return {'access_token': access_token}, 200
 
 
 @app.route('/')
