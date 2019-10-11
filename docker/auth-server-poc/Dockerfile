@@ -15,7 +15,8 @@ COPY config/supervisord_app.conf /etc/supervisor/supervisord.conf
 COPY config/nginx_app.conf /etc/nginx/sites-available/
 COPY config/nginx.conf /etc/nginx/
 COPY cert/* /etc/nginx/conf.d/
-COPY cert/ec256-key-pair.pem /opt/auth-server-poc/cert/
+COPY cert/private.pem /opt/auth-server-poc/cert/
+COPY cert/public.pem /opt/auth-server-poc/cert/
 
 # Give nginx some special treatment
 RUN unlink /etc/nginx/sites-enabled/default
