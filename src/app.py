@@ -6,7 +6,8 @@ app = Flask(__name__)
 api = Api(app, prefix='/api/v1.0')
 jwt = JWTManager(app)
 
-PEM_FILE = '/opt/auth-server-poc/cert/ec256-key-pair.pem'
+PEM_PRIVATE = '/opt/auth-server-poc/cert/private.pem'
+PEM_PUBLIC = '/opt/auth-server-poc/cert/public.pem'
 
 app.config['JWT_PRIVATE_KEY'] = open(PEM_FILE).read()
 app.config['JWT_PUBLIC_KEY'] = open(PEM_FILE).read()
