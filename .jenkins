@@ -1,0 +1,12 @@
+#
+# Jenkins pipeline
+#
+
+disabled: false
+
+extra_jobs:
+  - name: auth-server-poc
+    builders:
+      - docker
+    docker_name: auth-server-poc
+    docker_context_dir: docker/auth-server-poc
