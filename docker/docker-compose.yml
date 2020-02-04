@@ -1,0 +1,20 @@
+---
+version: '3.7'
+services:
+  cnaas_auth:
+    build: ./auth-server-poc
+    ports:
+      - 443:1443
+    volumes:
+      - type: volume
+        source: cnaas-authserver-jwtcert
+        target: /opt/auth-server-poc/cert/
+      - type: volume
+        source: cnaas-authserver-userdb
+        target: /opt/auth-server-poc/userdb/
+volumes:
+  cnaas-authserver-jwtcert:
+    external: true
+  cnaas-authserver-userdb:
+    external: true
+

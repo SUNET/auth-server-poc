@@ -24,6 +24,7 @@ apt-get update && \
       nginx \
       supervisor \
       libssl-dev \
+      apache2-utils \
     && apt-get clean
 
 pip3 install uwsgi
