@@ -1,8 +1,12 @@
 from flask import Flask, request
 from flask_restful import Api, Resource
 from flask_jwt_extended import create_access_token, JWTManager
+from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app,
+            resources={r"/api/*": {"origins": "*"}},
+            expose_headers=["Content-Type", "Authorization", "X-Total-Count"])
 api = Api(app, prefix='/api/v1.0')
 jwt = JWTManager(app)
 
