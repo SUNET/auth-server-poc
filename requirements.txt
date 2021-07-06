@@ -1,4 +1,4 @@
-Flask-JWT-Extended==3.24.0
-Flask-RESTful==0.3.7
+Flask-JWT-Extended==4.2.3
+Flask-RESTful==0.3.9
 cryptography==3.3.2
 Flask-Cors==3.0.9
