@@ -235,9 +235,9 @@ typing-extensions==3.10.0.2 \
     # via
     #   -r requirements.txt
     #   importlib-metadata
-werkzeug==2.0.2 \
-    --hash=sha256:63d3dc1cf60e7b7e35e97fa9861f7397283b75d765afcaefd993d6046899de8f \
-    --hash=sha256:aa2bb6fc8dee8d6c504c0ac1e7f5f7dc5810a9903e793b6f715a9f015bdadb9a
+werkzeug==3.0.1 \
+    --hash=sha256:507e811ecea72b18a404947aded4b3390e1db8f826b494d76550ef45bb3b1dcc \
+    --hash=sha256:90a285dc0e42ad56b34e696398b8122ee4c681833fb35b8334a095d82c56da10
     # via
     #   -r requirements.txt
     #   flask
